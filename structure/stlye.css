@@ -1,0 +1,360 @@
+html {
+     scroll-behavior: smooth;
+   }
+body {
+     background-color: black;
+     margin: 0;
+     color: white;
+     font-family: 'Cabinet Grotesk', sans-serif;
+     transition: background-color 0.5s ease;
+}
+
+.fade-in-out   {
+     transform: translateY(20px);
+     opacity: 0;
+     transition: 1s ease;
+}
+
+.fade-in-out--visible{
+     transform: translateY(0);
+     opacity: 1;
+}
+
+header {
+     border-bottom: 0.5px solid white;
+}
+
+header img {
+     background-color: #222222;
+     float: left;
+     max-height: 100px;
+     width: auto;
+     transition: max-height 0.3s ease;
+     border-radius: 100px;
+     border: 2px solid #49C5B6 ;
+}
+
+.nav-bar {
+     max-height: 70px;
+     padding: 20px;
+}
+
+.nav-bar a {
+     color: #49C5B6;
+     cursor: pointer;
+     text-decoration: none;
+}
+
+.nav-bar a:hover {
+     transition: 0.3s ease;
+     color: white;
+}
+
+#nav-lets-talk {
+     display: inline-block;
+     color: white; 
+     font-weight: bold;
+}
+
+#nav-lets-talk:hover {
+     color: #7F8C8D;
+}
+
+.elements {
+     display: flex;
+     align-items: center;
+     justify-content: right;
+     gap: 20px;
+     font-size: 2rem;
+     transition: font-size 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+     .elements {
+          font-size: 1.5rem;
+     }
+}
+
+
+
+/*                  --------sections--------------- */
+.section-1 {
+     display: grid;
+     grid-template-rows: 1fr 1fr 1fr;
+     overflow: hidden;
+     min-height: 20rem;
+
+}
+
+.section-1 {
+     margin-top: 2rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+#right-container {
+     float: right;
+     display: grid;
+}
+
+#right-container p {
+     transition: font-size 0.3s ease;
+     margin: 0px;
+     line-height: 0.75;
+
+}
+
+#left-container {
+     color: #7F8C8D;
+
+     margin-left: 5rem;
+     font-weight: bold;
+     float: right;
+     font-size: 4rem;
+     width: 45%;
+     display: grid;
+     place-items: center;
+     min-height: auto;
+}
+
+#left-container p:hover {
+     color: white;
+     transition: color 0.8s ease; 
+
+
+}
+
+@media (max-width: 768px) {
+
+     /* kisebb méret */
+     #right-container p {
+          font-size: 6rem;
+     }
+
+     #right-container {
+          width: 50%;
+     }
+     .section-1{
+          margin-top: 3rem;
+  
+     }
+     #left-container {
+          margin-left: 8px;
+          font-weight: normal;
+          font-size: 2rem;
+     }
+     header img {
+          margin-top: 15px;
+          max-height: 50px; 
+     }
+     .elements{gap: 10px;
+          font-size: 1rem;
+     }
+
+
+}
+
+@media (min-width: 768px) {
+
+     /* nagyobb méret */
+     #right-container p {
+          font-size: 17rem;
+     }
+
+     #right-container {
+          width: 80%;
+     }
+
+     header img {
+          max-height: 200px;
+     }
+
+     .elements {
+          gap: 40px;
+     }
+}
+
+#ray1 {
+     background-clip: text;
+     background: linear-gradient(to bottom, #49C5B6 50%, white 100%);
+
+     -webkit-background-clip: text; 
+     color: transparent; 
+     display: inline-block; 
+     font-weight: lighter;
+}
+
+#ray2 {
+     color: white;
+}
+
+#ray3 {
+     background-clip: text;
+     background: linear-gradient(to top,  #49C5B6 50%, white 100%);
+     -webkit-background-clip: text; 
+     color: transparent; 
+     display: inline-block; 
+     margin: 0px;
+     font-weight: lighter;
+}
+
+#ray1:hover, #ray3:hover {
+     transition: color 0.8s ease;
+}
+
+#ray2:hover {
+     color: #7F8C8D;
+     transition: color 0.8s ease;
+
+}
+
+
+
+.section-2{
+     height: 30rem;
+}
+
+#about-me-title{
+     margin-top: 30vh;
+     margin-bottom: 30vh;
+     text-align: center;
+     color: #7F8C8D;
+     font-size: 60px;
+}
+
+#about-me-main{
+     text-align: center;
+     color: #49C5B6;
+     margin-bottom: 50vh;
+     font-size: 50px;
+     font-weight: bold;
+}
+
+.about-me-text p{
+     margin-top: 30vh;
+     font-size: 27px;
+     text-align: center;
+     background-clip: text;
+     background-image: linear-gradient(90deg ,#49C5B6, white);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     margin-bottom: 30vh;
+}
+
+.sidebyside{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+}
+
+.sidebyside-title{
+          margin-left: auto;
+          color: white;
+          font-size: 30px;
+          margin-bottom: 10vh;
+          text-align: center;
+     }
+     
+.experties p{
+     text-align: left;
+     margin: 5px;
+     color: #49C5B6;
+     font-size: 32px;
+     margin-left: 4vh;
+}
+
+.experties:hover{
+     color: white;
+
+}
+
+.scrolled {
+     background-color: #fff;}
+
+
+.prog-languages{
+     margin: 20px;
+     text-align: center;
+
+     color: #49C5B6;
+     margin-bottom: 50vh;
+}
+.prog-languages h1{
+     margin-bottom: 15vh;
+}
+
+
+
+/*          ---------------------------- SECTION 3                   */
+
+
+.section-3{
+
+     text-align: center;
+     color: black;
+
+}
+
+.lets-talk a{
+     font-weight: bold;
+     text-decoration: none;
+     color: #49C5B6;
+}
+
+.conatiner-social{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.contact-links{
+     background-color: #c7c7c7;
+     margin-top: 20rem;
+border: #49C5B6 solid 5px;
+     width: 40rem;
+     padding: 2rem;
+
+     display: grid;
+     grid-template-rows: 1fr 1fr 1fr;
+     margin-bottom: 10rem;
+}
+
+.contact-links a{
+     text-decoration: none;
+     color: black;
+     font-weight: bold;
+}
+
+.section-3 img{
+     margin-left: 2rem;
+     max-width: 50px;
+     max-height: 50px;
+     float: left;
+}
+
+
+
+
+/* ----------------------- FOOTER -------------- */
+
+
+footer{
+     min-height: 20rem;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     background-image: linear-gradient(90deg, #000000 50%, #49C5B6 100%);
+
+}
+
+.column-1, .column-2, .column-3{
+     color: #49C5B6;
+     padding: 5px;
+     border-left: #49C5B6 solid 2px;
+     text-align: center;
+}
+
+
+.column-1 p{
+     text-align: center;
+     margin-bottom: 0px;
+}
