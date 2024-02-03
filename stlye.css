@@ -20,6 +20,9 @@ body {
      opacity: 1;
 }
 
+
+/* --------------- navbar ---------------- */
+
 header {
      border-bottom: 0.5px solid white;
 }
@@ -32,11 +35,12 @@ header img {
      transition: max-height 0.3s ease;
      border-radius: 100px;
      border: 2px solid #49C5B6 ;
+     position: absolute;
 }
 
 .nav-bar {
      max-height: 70px;
-     padding: 20px;
+     padding:15px;
 }
 
 .nav-bar a {
@@ -52,7 +56,7 @@ header img {
 
 #nav-lets-talk {
      display: inline-block;
-     color: white; 
+     color: white;
      font-weight: bold;
 }
 
@@ -105,7 +109,6 @@ header img {
 
 #left-container {
      color: #7F8C8D;
-
      margin-left: 5rem;
      font-weight: bold;
      float: right;
@@ -118,7 +121,7 @@ header img {
 
 #left-container p:hover {
      color: white;
-     transition: color 0.8s ease; 
+     transition: color 0.8s ease;
 
 
 }
@@ -135,7 +138,7 @@ header img {
      }
      .section-1{
           margin-top: 3rem;
-  
+
      }
      #left-container {
           margin-left: 8px;
@@ -144,11 +147,15 @@ header img {
      }
      header img {
           margin-top: 15px;
-          max-height: 50px; 
+          max-height: 50px;
      }
      .elements{gap: 10px;
-          font-size: 1rem;
+          font-size: 1.1rem;
      }
+     header img {
+          min-height: 80px;
+     }
+
 
 
 }
@@ -176,10 +183,9 @@ header img {
 #ray1 {
      background-clip: text;
      background: linear-gradient(to bottom, #49C5B6 50%, white 100%);
-
-     -webkit-background-clip: text; 
-     color: transparent; 
-     display: inline-block; 
+     -webkit-background-clip: text;
+     color: transparent;
+     display: inline-block;
      font-weight: lighter;
 }
 
@@ -190,9 +196,9 @@ header img {
 #ray3 {
      background-clip: text;
      background: linear-gradient(to top,  #49C5B6 50%, white 100%);
-     -webkit-background-clip: text; 
-     color: transparent; 
-     display: inline-block; 
+     -webkit-background-clip: text;
+     color: transparent;
+     display: inline-block;
      margin: 0px;
      font-weight: lighter;
 }
@@ -207,80 +213,130 @@ header img {
 
 }
 
+ /* --------------------------------- SECTION 2------------------- */
+ /* ------------------------ ABOUT ME ----------- */
+
 .section-2{
-     height: 30rem;
+     margin-top: 30vh;
+     display: grid;
+     gap: 20vh;
+     text-align: center;
 }
 
 #about-me-title{
-     margin-top: 30vh;
+     font-size: 8vh;
+     font-weight: bold;
      margin-bottom: 30vh;
-     text-align: center;
-     color: #7F8C8D;
-     font-size: 60px;
 }
 
 #about-me-main{
-     text-align: center;
-     color: #49C5B6;
-     margin-bottom: 50vh;
-     font-size: 4rem;
-     font-weight: bold;
+font-size: 6vh;
+color: #49C5B6;
+font-weight: bold;
 }
 
+.section-2 p{
+     padding-right: 35vh;
+     padding-left: 35vh;
+     font-size: 3vh;
+     margin-bottom: 12vh;
+}
 
-.about-me-text p{
-     margin-top: 30vh;
-     font-size: 1.8rem;
-     text-align: center;
-     background-clip: text;
-     background-image: linear-gradient(90deg ,#49C5B6, white);
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
+#about-me-main{
+     font-size: 7vh;
      margin-bottom: 30vh;
-     padding: 55px;
 }
 
-/* kisebb meret */
-@media (max-width: 768px) {
-     .about-me-text p{
-          font-size: 1.3rem ;
-     }
-     #about-me-main{
-          font-size: 2.5rem;
+.scroll-reveal span {
+     text-align: center;
+     color: hsl(0 10% 100% / 0.2);
+     background-clip: text;
+     background-repeat: no-repeat;
+     background-size: 0% 100%;
+     background-image: linear-gradient(90deg, #c4fbf4, #49C5B6);
+     animation: scroll-reveal linear forwards;
+     animation-timeline: view(y);
+}
+
+.scroll-reveal h2 span{
+     animation-range-start: cover 25vh;
+     animation-range-end: cover 50vh;
+}
+
+.scroll-reveal p span{
+     animation-range-start: cover 42vh;
+     animation-range-end: cover 80vh;
+}
+
+
+@keyframes scroll-reveal{
+     to {
+          background-size: 100% 100%;
      }
 }
 
 .experties{
-     text-align: center;
      display: grid;
-     gap: 1rem;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+     gap: 3vh;
 }
 
 
-.experties h1{
-     margin-bottom: 3rem;
+.experties-title{
+     font-size: 6vh;
+     margin-bottom: 3vh;
 }
 
 .experties a{
      text-decoration: none;
      color: #49C5B6;
-     font-size: 1.4rem;
+     font-size: 2rem;
 }
 
 
+/* kisebb meret */
+@media (max-width: 768px) {
+     #about-me-title{
+          margin-bottom: 15vh;
+     }
+     .section .scroll-reveal{
+          margin-top: 20vh;
+          font-size: 1.3rem ;
+     }
+     #about-me-main{
+          padding: 2vh;
+          font-size: 5vh;
+          margin-bottom: 9vh;
+     }
+     .section-2 p{
+          padding-right: 8vh;
+          padding-left: 8vh;
+          margin-bottom: 5vh;
+     }
+     .experties{
+          gap: 1vh;
+     }
+
+     .experties a{
+          font-size: 1.4rem;
+     }
+     .experties-title{
+          font-size: 4vh;
+          margin-bottom: 1vh;
+     }
+     
+}
 
 .scrolled {
-     background-color: #49C5B6;}
-
+     background-color: #49C5B6;
+}
 
 /*          ---------------------------- SECTION 3                   */
 
 
 .section-3{
-
      text-align: center;
      color: black;
-
 }
 
 .lets-talk h1{
@@ -302,11 +358,10 @@ header img {
 .contact-links{
      background-color: #c7c7c7;
      margin-top: 10rem;
-
      border-radius: 25px;
      width: 40rem;
      padding: 2rem;
-
+     box-shadow: -1rem 0 3rem #000;
      display: grid;
      grid-template-rows: 1fr 1fr 1fr;
      margin-bottom: 10rem;
@@ -327,7 +382,6 @@ header img {
 
 
 
-
 /* ----------------------- FOOTER -------------- */
 
 
@@ -335,22 +389,26 @@ footer{
      min-height: 20rem;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
-     background-image: linear-gradient(90deg, #000000 50%, #49C5B6 100%);
-
+     background-color: #000000;
 }
 
 .column-1, .column-2, .column-3{
      display: grid;
      color: #49C5B6;
      padding: 5px;
-     border-left: white solid 2px;
+     border: #222222 solid 2px;
      text-align: center;
 }
 
 
 .column-3{
-     color: #000000;
+     color: #ffffff;
      font-weight: bold;
+}
+
+.column-1 h1{
+     font-weight: bold;
+     font-size: 3vh;
 }
 
 .column-1 a{
@@ -363,3 +421,13 @@ footer{
      margin-bottom: 0;
      padding-bottom: 0;
 }
+
+.column-2 p{
+      margin-top: 30%;
+}
+
+.column-3 p{
+     margin-top: 30%;
+}
+
+
