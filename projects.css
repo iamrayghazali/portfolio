@@ -1,0 +1,76 @@
+header {
+     border-bottom: 0.5px solid rgb(0, 0, 0);
+     /* background-color: #36384C; */
+     /* background-color: #007EA7; */
+     /* background-color: #DDEBF7; */
+     background-color: #FF9A8B;
+
+
+
+}
+
+.nav-bar {
+     max-height: 70px;
+     padding:15px;
+}
+
+.nav-bar a {
+     color: #000000;
+     cursor: pointer;
+     text-decoration: none;
+}
+
+.nav-bar a:hover {
+     transition: 0.3s ease;
+     color: #49C5B6;
+}
+
+#nav-lets-talk {
+     display: inline-block;
+     color: #49C5B6;
+     font-weight: bold;
+}
+
+#nav-lets-talk:hover {
+     color: #7F8C8D;
+}
+
+.elements {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+     font-size: 2rem;
+     transition: font-size 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+     .elements {
+          font-size: 1.5rem;
+     }
+}
+
+
+
+.box{
+     display: flex;
+     height: 70px;
+     width: 250px;
+     border-radius: 20px;
+     border: solid black 2px;
+}
+#box1{
+     background-color: #36384C;
+}
+#box2{
+     background-color: #007EA7;
+     
+}
+#box3{
+     background-color: #DDEBF7;
+     
+}
+#box4{
+     background-color: #FF9A8B;
+     
+}

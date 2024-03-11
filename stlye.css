@@ -9,10 +9,10 @@ body {
      transition: background-color 0.5s ease;
 }
 
-.fade-in-out   {
+.fade-in-out{
      transform: translateY(20px);
      opacity: 0;
-     transition: 1s ease;
+     transition: 2s ease;
 }
 
 .fade-in-out--visible{
@@ -24,7 +24,7 @@ body {
 /* --------------- navbar ---------------- */
 
 header {
-     border-bottom: 0.5px solid white;
+     border-bottom: 0.5px solid black;
 }
 
 header img {
@@ -191,6 +191,7 @@ header img {
 
 #ray2 {
      color: white;
+     text-shadow: rgba(73,197,182,1) 0px 0px 80px;
 }
 
 #ray3 {
@@ -229,10 +230,11 @@ header img {
      margin-bottom: 30vh;
 }
 
-#about-me-main{
-font-size: 6vh;
-color: #49C5B6;
-font-weight: bold;
+#myNameText{
+     height: 600px;
+     font-size: 6vh;
+     color: #49C5B6;
+     font-weight: bold;
 }
 
 .section-2 p{
@@ -379,7 +381,6 @@ font-weight: bold;
      max-height: 50px;
      float: left;
 }
-
 
 
 /* ----------------------- FOOTER -------------- */
