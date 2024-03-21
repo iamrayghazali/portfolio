@@ -220,14 +220,24 @@ header img {
 .section-2{
      margin-top: 30vh;
      display: grid;
-     gap: 20vh;
      text-align: center;
 }
 
 #about-me-title{
      font-size: 8vh;
      font-weight: bold;
+     margin-bottom: 20vh;
+}
+
+#welcomeText{
      margin-bottom: 30vh;
+}
+
+#software-dev{
+     font-weight: bold;
+     color: #49C5B6;
+     margin-top: 15vh;
+     margin-bottom: 20vh;
 }
 
 #myNameText{
@@ -242,11 +252,6 @@ header img {
      padding-left: 35vh;
      font-size: 3vh;
      margin-bottom: 12vh;
-}
-
-#about-me-main{
-     font-size: 7vh;
-     margin-bottom: 30vh;
 }
 
 .scroll-reveal span {
@@ -298,8 +303,12 @@ header img {
 
 /* kisebb meret */
 @media (max-width: 768px) {
+
      #about-me-title{
-          margin-bottom: 15vh;
+          margin-bottom: 3vh;
+     }
+     #software-dev{
+          margin-bottom: 3vh;
      }
      .section .scroll-reveal{
           margin-top: 20vh;
