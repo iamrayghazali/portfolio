@@ -2,18 +2,18 @@ html {
      scroll-behavior: smooth;
    }
 body {
-     background-color: rgb(24, 24, 24);
+     height: 100%;
      margin: 0;
+     background-color: rgb(29, 29, 29);
      color: white;
      font-family: 'Cabinet Grotesk';
-     /* transition: background-color 0.5s ease; */
+     transition: background-color 0.5s ease;
      display: flex;
      justify-content: center;
      align-items: center;
 }
 
 #title{
-     margin-top: 60%;
      font-size: 100px;
      display: flex;
      justify-content: end;
@@ -21,20 +21,27 @@ body {
 }
 
 #title h1{
-     color: #f0bf2e     ;
      font-size: 30px;
 }
 
-#title img{
-     max-height: 40px;
-     padding-bottom: 12px;
+img{
+     display: flex;
+     align-items: center;
+     margin: 40px;
+     margin-left:38%;
+     margin-top: 40%;
+     max-height: 80px;
 }
 
 h3{
-     color: rgb(189, 189, 189);
+     font-weight: 200;
+     color: rgb(255, 255, 255);
 }
 
 #links a{
+     margin-bottom: 250px;
+     font-weight: 600;
+     padding: 5%;
      font-style: italic;
      color: white;
      text-decoration: none;
@@ -45,4 +52,14 @@ h3{
 #links a:hover {
      opacity: 1;
      transition: 0.3s;
+}
+
+#title .white{
+     font-weight: 200;
+     color: white;
+}
+
+#title .yellow{
+     color: #f0bf2e;
+     font-weight: 800;
 }
