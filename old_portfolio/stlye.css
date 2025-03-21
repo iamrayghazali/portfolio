@@ -1,0 +1,65 @@
+html {
+     scroll-behavior: smooth;
+   }
+body {
+     height: 100%;
+     margin: 0;
+     background-color: rgb(29, 29, 29);
+     color: white;
+     font-family: 'Cabinet Grotesk';
+     transition: background-color 0.5s ease;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+#title{
+     font-size: 100px;
+     display: flex;
+     justify-content: end;
+     margin-bottom: 10%;
+}
+
+#title h1{
+     font-size: 30px;
+}
+
+img{
+     display: flex;
+     align-items: center;
+     margin: 40px;
+     margin-left:38%;
+     margin-top: 40%;
+     max-height: 80px;
+}
+
+h3{
+     font-weight: 200;
+     color: rgb(255, 255, 255);
+}
+
+#links a{
+     margin-bottom: 250px;
+     font-weight: 600;
+     padding: 5%;
+     font-style: italic;
+     color: white;
+     text-decoration: none;
+     opacity: 0.7;
+     transform: scale(1.2);
+}
+
+#links a:hover {
+     opacity: 1;
+     transition: 0.3s;
+}
+
+#title .white{
+     font-weight: 200;
+     color: white;
+}
+
+#title .yellow{
+     color: #f0bf2e;
+     font-weight: 800;
+}
