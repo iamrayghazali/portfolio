@@ -74,7 +74,7 @@ export const Menu = ({
     return (
         <nav
             onMouseLeave={() => setActive(null)} // resets the state
-            className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+            className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 max-w-7/12"
         >
             {children}
         </nav>
@@ -86,21 +86,26 @@ export const ProductItem = ({
                                 description,
                                 href,
                                 src,
+    img,
                             }: {
     title: string;
     description: string;
     href: string;
     src: string;
+    img: boolean;
 }) => {
     return (
         <a href={href} className="flex space-x-2">
-            <img
-                src={src}
-                width={140}
-                height={70}
-                alt={title}
-                className="shrink-0 rounded-md shadow-2xl"
-            />
+            {img ? (
+                <img
+                    loading="eager"
+                    src={src}
+                    width={200}
+                    height={80}
+                    alt={title}
+                    className="shrink-0 rounded-md shadow-2xl"
+                />
+            ): null}
             <div>
                 <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
                     {title}
