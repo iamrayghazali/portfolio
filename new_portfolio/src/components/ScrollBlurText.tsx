@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,8 +28,6 @@ export default function ScrollBlurText() {
 
             words.forEach((_, i) => {
                 const el = wordRefs.current[i];
-                console.log(el);
-                console.log(i);
                 if (i === words.length - 1) {
                     setIsLastWordVisible(true);
                 } else {
