@@ -5,7 +5,7 @@ import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const words = ["Plan ->", "Design ->", "Development ->", "Launch"];
+const words = ["Plan 👉🏽", "Design 👉🏽", "Development 👉🏽", "Launch"];
 
 export default function ScrollBlurText() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -68,9 +68,9 @@ export default function ScrollBlurText() {
                 style={{
                     height: "100vh",
                     backgroundColor: "black",
-                    color: isLastWordVisible ? "green" : "white",
-                    fontSize: "4rem",
-                    fontWeight: "bold",
+                    color: isLastWordVisible ? "#00b8db" : "green",
+                    fontSize: "3rem",
+                    fontWeight: "thin",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",

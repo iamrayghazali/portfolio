@@ -46,14 +46,12 @@ export const TracingBeam = ({
         },
     );
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <motion.div
             ref={ref}
-            className={cn("relative mx-auto h-full w-full max-w-4xl", className)}
+            className={cn("relative mx-auto h-full w-full z-100", className)}
         >
-            <div className="absolute top-64 -left-4 md:-left-20">
+            <div className="absolute top-64 z-50">
                 <motion.div
                     transition={{
                         duration: 0.2,
@@ -63,7 +61,7 @@ export const TracingBeam = ({
                         boxShadow:
                             scrollYProgress.get() > 0
                                 ? "none"
-                                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+                                : "#00b8db",
                     }}
                     className="border-netural-200 ml-[27px] flex h-4 w-4 items-center justify-center rounded-full border shadow-sm"
                 >
@@ -73,7 +71,7 @@ export const TracingBeam = ({
                             delay: 0.5,
                         }}
                         animate={{
-                            backgroundColor: scrollYProgress.get() > 0 ? "white" : "#10b981",
+                            backgroundColor: scrollYProgress.get() > 0 ? "white" : "#00b8db",
                             borderColor: scrollYProgress.get() > 0 ? "white" : "#059669",
                         }}
                         className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
