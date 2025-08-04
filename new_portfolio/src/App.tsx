@@ -44,7 +44,7 @@ function App() {
                                     <p className="font-thin">projects</p>
                                 </a>
                                 <a className="">
-                                    <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.2)] bg-[linear-gradient(115deg,_rgba(255,255,255,0.05)_30%,_white_50%,_rgba(255,255,255,0.05)_70%)] bg-[length:300%_100%] bg-[position:200%_0] animate-[shine_6s_linear_infinite]">
+                                    <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.5)] bg-[linear-gradient(115deg,_rgba(255,255,255,0.05)_30%,_white_50%,_rgba(255,255,255,0.05)_70%)] bg-[length:300%_100%] bg-[position:200%_0] animate-[shine_5s_linear_infinite]">
                                         let's talk
                                     </p>
                                 </a>
@@ -52,8 +52,11 @@ function App() {
                         </div>
                         <LampDemo text={"Hi, I'm Ray"}></LampDemo>
                     </div>
+                    <div className={"h-screen bg-black"}>
+                        <div className="flex mt-5 mb-5 gap-3">
 
-                    <div className={"h-screen bg-black"}></div>
+                        </div>
+                    </div>
                     <div className={"h-screen bg-black"}>
 
                     </div>
