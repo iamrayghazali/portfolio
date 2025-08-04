@@ -14,9 +14,21 @@ export function LampDemo({text}) {
                     duration: 0.8,
                     ease: "easeInOut",
                 }}
-                className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+                className="z-0 mb-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent text-7xl max-md:text-5xl max-sm:text-5xl"
             >
                 {text}
+            </motion.h1>
+            <motion.h1
+                initial={{ opacity: 0.4, y: 100 }}
+                whileInView={{ opacity: 0.9, y: 0 }}
+                transition={{
+                    delay: 0.4,
+                    duration: 0.9,
+                    ease: "easeInOut",
+                }}
+                className="z-0 bg-gradient-to-br from-slate-200 to-slate-600 py-4 bg-clip-text text-center font-light tracking-tight text-transparent text-3xl max-md:text-2xl max-sm:text-lg"
+            >
+               Full stack software developer.
             </motion.h1>
         </LampContainer>
     );
@@ -92,10 +104,9 @@ export const LampContainer = ({
                     }}
                     className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
                 ></motion.div>
-
                 <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
             </div>
-            <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
+            <div className="relative z-50 flex -translate-y-70 flex-col items-center px-5">
                 {children}
             </div>
         </div>
