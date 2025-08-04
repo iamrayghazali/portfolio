@@ -14,7 +14,7 @@ export function LampDemo({text}) {
                     duration: 0.8,
                     ease: "easeInOut",
                 }}
-                className=" z-0 mb-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent text-7xl max-md:text-7xl max-sm:text-5xl"
+                className="z-0 mb-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center font-medium tracking-tight text-transparent text-7xl max-md:text-7xl max-sm:text-5xl"
             >
                 {text}
             </motion.h1>
@@ -26,7 +26,7 @@ export function LampDemo({text}) {
                     duration: 0.9,
                     ease: "easeInOut",
                 }}
-                className=" max-sm:mb-28 z-0 bg-gradient-to-br from-slate-200 to-slate-600 py-4 bg-clip-text text-center font-light tracking-tight text-transparent text-4xl max-md:text-3xl max-sm:text-lg"
+                className="max-sm:mb-28 z-0 bg-gradient-to-br from-slate-200 to-slate-600 py-4 bg-clip-text text-center font-light tracking-tight text-transparent text-4xl max-md:text-3xl max-sm:text-lg"
             >
                Full stack software developer.
             </motion.h1>
