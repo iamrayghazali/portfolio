@@ -2,11 +2,22 @@ import React from "react";
 import './App.css'
 import {TracingBeam} from "./components/ui/tracing-beam";
 import {useGitHub} from "./context/GithubContext";
-import linkedInLogo from "./assets/logos/linkedin.svg"
-import gitHubLogo from "./assets/logos/github.svg"
-import emailLogo from "./assets/logos/email.svg"
+import linkedInLogo from "@/assets/icons/linkedin.svg"
+import gitHubLogo from "@/assets/icons/github.svg"
+import emailLogo from "@/assets/icons/email.svg"
 import {LampDemo} from "@/components/ui/lamp";
 import {motion} from "framer-motion";
+import {Particles} from "@/components/magicui/particles";
+// TECH SVGS
+import jsIMG from "/src/assets/icons/tech/javascript.svg"
+import javaIMG from "/src/assets/icons/tech/java.svg"
+import phpIMG from "/src/assets/icons/tech/php.svg"
+import pythonIMG from "/src/assets/icons/tech/python.svg"
+import djangoIMG from "/src/assets/icons/tech/django.svg"
+import reactIMG from "/src/assets/icons/tech/react.svg"
+import laravelIMG from "/src/assets/icons/tech/laravel.svg"
+import nodejsIMG from "/src/assets/icons/tech/nodejs.svg"
+import {Timeline} from "@/components/ui/timeline";
 
 
 function App() {
@@ -22,10 +33,12 @@ function App() {
 
     return (
         <>
-            <TracingBeam>
+            <div className="relative bg-black">
 
-                <div className="bg-black">
-                    <div className="relative">
+                <TracingBeam>
+                    <Particles className="absolute w-full h-full"/>
+
+                    <section className="relative">
                         <div className="absolute left-1/2 -translate-x-1/2 w-1/4 z-20 flex flex-col items-center p-5">
                             <motion.div
                                 initial={{y: -100, opacity: 0}}
@@ -44,28 +57,67 @@ function App() {
                                     <p className="font-thin">projects</p>
                                 </a>
                                 <a className="">
-                                    <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.5)] bg-[linear-gradient(115deg,_rgba(255,255,255,0.05)_30%,_white_50%,_rgba(255,255,255,0.05)_70%)] bg-[length:300%_100%] bg-[position:200%_0] animate-[shine_5s_linear_infinite]">
+                                    <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]
+                                     bg-[linear-gradient(115deg,_rgba(255,255,255,0.05)_30%,_white_50%,_rgba(255,255,255,0.05)_70%)]
+                                      bg-[length:300%_100%] bg-[position:200%_0] animate-[shine_5s_linear_infinite]">
                                         let's talk
                                     </p>
                                 </a>
                             </motion.div>
                         </div>
                         <LampDemo text={"Hi, I'm Ray"}></LampDemo>
-                    </div>
-                    <div className={"h-screen bg-black"}>
-                        <div className="flex mt-5 mb-5 gap-3">
-
+                    </section>
+                    <section className={"sm:h-dvh h-full bg-gradient-to-b from-[rgb(4,4,12)] to-black"}>
+                        <div className="absolute inset-0 rounded-lg z-0">
+                            <Particles className="w-full h-full"/>
                         </div>
-                    </div>
-                    <div className={"h-screen bg-black"}>
+                        <div className="m-10 mt-0 grid grid-cols-1 sm:grid-cols-2 gap-20">
+                            <div className="sm:translate-y-25 flex flex-col text-center sm:text-start sm:justify-self-end gap-6 min-w-1/2">
+                                <h1 className="sm:text-3xl text-white text-lg font-bold font-fira">
+                                    Programming Languages
+                                </h1>
+                                <div className="relative w-full max-w-[370px] aspect-[16/9] bg-black grid grid-cols-2 grid-rows-2 gap-8 place-items-center p-6">
+                                    <div className="absolute inset-0 rounded-lg z-0">
+                                        <Particles className="w-full h-full"/>
+                                    </div>
 
-                    </div>
-                    <div className={"h-screen bg-red-600"}>
-                    </div>
-                    <div className={"h-screen bg-green-600"}></div>
+                                    <img src={jsIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="JavaScript"/>
+                                    <img src={javaIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Java"/>
+                                    <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Python"/>
+                                    <img src={phpIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="PHP"/>
+                                </div>
+                            </div>
+
+                            <div className="sm:-translate-y-25 sm:row-start-2 text-center sm:text-start sm:col-start-2 flex justify-center flex-col">
+                                <h1 className="sm:text-3xl sm:ml-20 text-white text-lg font-bold font-fira">
+                                    Frameworks
+                                </h1>
+
+                                <div className="
+                                        relative
+                                        w-full max-w-[400px]
+                                        aspect-auto
+                                        border-2 bg-black
+                                        grid grid-cols-2 grid-rows-3 gap-6 place-items-center p-6">
+                                    <div className="absolute inset-0 rounded-lg z-0">
+                                        <Particles className="w-full h-full"/>
+                                    </div>
+
+                                    <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="JavaScript"/>
+                                    <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Java"/>
+                                    <img src={reactIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
+                                    <img src={laravelIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
+                                    <img src={nodejsIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
+                                    <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </TracingBeam>
+                <div className={"h-screen bg-red-600"}>
                 </div>
-            </TracingBeam>
-
+                <div className={"h-screen bg-green-600"}></div>
+            </div>
         </>
     )
 }

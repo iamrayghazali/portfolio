@@ -1,8 +1,50 @@
-@keyframes shine {
-    0% {
-        background-position: 200% 0;
+h1 {
+    font-family: 'Fira Sans';
+}
+
+@layer utilities {
+    @theme inline {
+        --animate-move: move 5s linear infinite;
+
+        @keyframes move {
+            0% {
+                transform: translateX(-200px);
+            }
+            100% {
+                transform: translateX(200px);
+            }
+        }
     }
-    100% {
-        background-position: -100% 0;
+    @keyframes shine {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -100% 0;
+        }
+    }
+    @keyframes marquee {
+        0%   { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+        animation: marquee 5s linear infinite;
+        /* smooth GPU rendering */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    /* reverse version if you want bottom carousel to go opposite */
+    @keyframes marquee-reverse {
+        0%   { transform: translateX(-50%); }
+        100% { transform: translateX(0%); }
+    }
+    .animate-marquee-reverse {
+        animation: marquee-reverse 10s linear infinite;
+        transform: translateZ(0);
+    }
+    .text-primary {
+            color: #04c5e5;
     }
 }
