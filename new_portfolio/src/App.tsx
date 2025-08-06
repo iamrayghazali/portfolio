@@ -7,15 +7,17 @@ import gitHubLogo from "@/assets/icons/github.svg"
 import emailLogo from "@/assets/icons/email.svg"
 import {LampDemo} from "@/components/ui/lamp";
 import {motion} from "framer-motion";
+import {Particles} from "@/components/magicui/particles";
 // TECH SVGS
-import javascript from "@/assets/icons/tech/javascript.svg"
-import java from "@/assets/icons/tech/java.svg"
-import python from "@/assets/icons/tech/python.svg"
-import php from "@/assets/icons/tech/php.svg"
-import laravel from "@/assets/icons/tech/laravel.svg"
-import nodejs from "@/assets/icons/tech/nodejs.svg"
-import django from "@/assets/icons/tech/django.svg"
-import react from "@/assets/icons/tech/react.svg"
+import jsIMG from "/src/assets/icons/tech/javascript.svg"
+import javaIMG from "/src/assets/icons/tech/java.svg"
+import phpIMG from "/src/assets/icons/tech/php.svg"
+import pythonIMG from "/src/assets/icons/tech/python.svg"
+import djangoIMG from "/src/assets/icons/tech/django.svg"
+import reactIMG from "/src/assets/icons/tech/react.svg"
+import laravelIMG from "/src/assets/icons/tech/laravel.svg"
+import nodejsIMG from "/src/assets/icons/tech/nodejs.svg"
+import {Timeline} from "@/components/ui/timeline";
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
             <div className="relative bg-black">
 
                 <TracingBeam>
+                    <Particles className="absolute w-full h-full"/>
+
                     <section className="relative">
                         <div className="absolute left-1/2 -translate-x-1/2 w-1/4 z-20 flex flex-col items-center p-5">
                             <motion.div
@@ -63,78 +67,56 @@ function App() {
                         </div>
                         <LampDemo text={"Hi, I'm Ray"}></LampDemo>
                     </section>
-
-                    <section className={"h-screen bg-black"}>
-                        <div className="flex flex-col gap-20 m-10 sm:grid sm:grid-cols-2 sm:grid-rows-2">
-
-                            <div className="relative overflow-hidden max-h-28 pt-5 pb-5 bg-black sm:col-start-1 sm:row-start-1">
-                                {/* track: no gap, double width, no wrap */}
-                                <div className="flex flex-nowrap min-w-[200%] will-change-transform animate-marquee">
-                                    {[java, javascript, python, php].map((src, i) => (
-                                        <img
-                                            key={i}
-                                            src={src}
-                                            alt=""
-                                            className="block h-16 w-auto object-contain mr-6 bg-black"
-                                        />
-                                    ))}
-                                    {/* duplicate set for seamless loop */}
-                                    {[java, javascript, python, php].map((src, i) => (
-                                        <img
-                                            key={`dup-${i}`}
-                                            src={src}
-                                            alt=""
-                                            className="block h-16 w-auto object-contain mr-6 bg-black"
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* fades */}
-                                <div className="absolute left-0 top-0 h-full w-40 z-30 bg-gradient-to-r from-black via-black/70 to-transparent pointer-events-none"></div>
-                                <div className="absolute right-0 top-0 h-full w-40 z-30 bg-gradient-to-l from-black via-black/70 to-transparent pointer-events-none"></div>
-                            </div>
-
-                            <div
-                                className="relative overflow-hidden max-h-28 pt-5 pb-5 bg-black sm:col-start-2 sm:row-start-2">
-
-                                <div className="flex animate-marquee-reverse gap-10">
-                                    {[laravel, nodejs, django, react].map((src, i) => (
-                                        <img key={i} className="h-16 w-auto" src={src} alt="tech"/>
-                                    ))}
-                                    {[laravel, nodejs, django, react].map((src, i) => (
-                                        <img key={`dup-${i}`} className="h-16 w-auto" src={src} alt="tech"/>
-                                    ))}
-                                </div>
-                                <div className="absolute left-0 top-0 h-full w-44 bg-gradient-to-r from-black via-black/70 via-30% to-transparent to-80% pointer-events-none"></div>
-                                <div className="absolute right-0 top-0 h-full w-44 bg-gradient-to-l from-black via-black/70 via-30% to-transparent to-80% pointer-events-none"></div>
-                            </div>
-
-                            <div className="hidden sm:block">
-                                <div className="grid grid-cols-2 h-full w-full">
-                                    <div className="flex justify-center items-center text-primary font-thin">
-                                        <h1 className="text-4xl font-fira italic">Languages</h1>
+                    <section className={"sm:h-dvh h-full bg-gradient-to-b from-[rgb(4,4,12)] to-black"}>
+                        <div className="absolute inset-0 rounded-lg z-0">
+                            <Particles className="w-full h-full"/>
+                        </div>
+                        <div className="m-10 mt-0 grid grid-cols-1 sm:grid-cols-2 gap-20">
+                            <div className="sm:translate-y-25 flex flex-col text-center sm:text-start sm:justify-self-end gap-6 min-w-1/2">
+                                <h1 className="sm:text-3xl text-white text-lg font-bold font-fira">
+                                    Programming Languages
+                                </h1>
+                                <div className="relative w-full max-w-[370px] aspect-[16/9] bg-black grid grid-cols-2 grid-rows-2 gap-8 place-items-center p-6">
+                                    <div className="absolute inset-0 rounded-lg z-0">
+                                        <Particles className="w-full h-full"/>
                                     </div>
+
+                                    <img src={jsIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="JavaScript"/>
+                                    <img src={javaIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Java"/>
+                                    <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Python"/>
+                                    <img src={phpIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="PHP"/>
                                 </div>
                             </div>
-                            <div className="hidden sm:block">
-                                <div className="grid grid-cols-2 h-full w-full">
-                                    <div
-                                        className="col-start-2 flex justify-center items-center text-primary font-thin">
-                                        <h1 className="text-4xl font-fira ">Frameworks</h1>
+
+                            <div className="sm:-translate-y-25 sm:row-start-2 text-center sm:text-start sm:col-start-2 flex justify-center flex-col">
+                                <h1 className="sm:text-3xl sm:ml-20 text-white text-lg font-bold font-fira">
+                                    Frameworks
+                                </h1>
+
+                                <div className="
+                                        relative
+                                        w-full max-w-[400px]
+                                        aspect-auto
+                                        border-2 bg-black
+                                        grid grid-cols-2 grid-rows-3 gap-6 place-items-center p-6">
+                                    <div className="absolute inset-0 rounded-lg z-0">
+                                        <Particles className="w-full h-full"/>
                                     </div>
+
+                                    <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="JavaScript"/>
+                                    <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Java"/>
+                                    <img src={reactIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
+                                    <img src={laravelIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
+                                    <img src={nodejsIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
+                                    <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
                                 </div>
                             </div>
                         </div>
-
-
                     </section>
-                    <div className={"h-screen bg-black"}>
-
-                    </div>
-                    <div className={"h-screen bg-red-600"}>
-                    </div>
-                    <div className={"h-screen bg-green-600"}></div>
                 </TracingBeam>
+                <div className={"h-screen bg-red-600"}>
+                </div>
+                <div className={"h-screen bg-green-600"}></div>
             </div>
         </>
     )
