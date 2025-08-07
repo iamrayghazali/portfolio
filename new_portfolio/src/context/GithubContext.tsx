@@ -14,19 +14,11 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios
-            .get("https://api.github.com/users/iamrayghazali/repos")
+        axios.get("https://api.github.com/users/iamrayghazali/repos")
             .then(async (res) => {
                 const filtered = filterRepos(res.data);
-                const reposWithScreenshots = await Promise.all(
-                    filtered.map(async (repo) => {
-                        const screenshots = await fetchScreenshots(repo.name);
-                        return { ...repo, screenshots };
-                    })
-                );
-
-                await cacheScreenshots(reposWithScreenshots);
-                setRepos(reposWithScreenshots);
+                console.log(filtered);
+                setRepos(await createStructure(filtered));
             })
             .catch((err) => console.error(err))
             .finally(() => setLoading(false));
@@ -36,11 +28,28 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         return data.filter(repo => repo.name !== "iamrayghazali" && repo.name !== "portfolio");
     }
 
+    const createStructure = async (data: Repo[]) :Promise<Repo[]> => {
+        const arr = [];
+        for (const repo of data) {
+            const imageArray = await fetchScreenshots(repo.name);
+            const obj = {
+                name: repo.name,
+                img: imageArray,
+                description: repo.description,
+                url: repo.url,
+            };
+            arr.push(obj);
+        }
+        console.log("array ", arr);
+        return arr;
+    }
+
     const fetchScreenshots = async (repoName: string) => {
         try {
             const res = await axios.get(
                 `https://api.github.com/repos/iamrayghazali/${repoName}/contents/screenshots`
             );
+            console.log("Images: ", res);
             return res.data;
         } catch (err) {
             console.warn(`No screenshots for ${repoName}`, err);
