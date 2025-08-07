@@ -183,8 +183,8 @@ export const Particles: React.FC<ParticlesProps> = ({
     const pSize = Math.floor(Math.random() * 2) + size;
     const alpha = 0;
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
-    const dx = (Math.random() - 0.5) * 0.1;
-    const dy = (Math.random() - 0.5) * 0.1;
+    const dx = (Math.random() - 0.5) * 0.2;
+    const dy = (Math.random() - 0.5) * 0.2;
     const magnetism = 0.1 + Math.random() * 4;
     return {
       x,
