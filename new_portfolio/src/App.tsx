@@ -174,13 +174,33 @@ function App() {
                     </section>
 
                 </TracingBeam>
-                <section className={`${!repos.length ?  ("h-[20vh]") : ("h-screen")} bg-gradient-to-b from-[rgb(4,4,12)] to-black`}>
+                <section className={`${!repos.length ?  ("h-[20vh]") : ("h-full")} bg-gradient-to-b from-[rgb(4,4,12)] to-black`}>
                     <Particles className="absolute w-full h-full"/>
                     { !repos.length ? (
                         <p className="text-center text-gray-400 m-20">Projects unavailable right now. Please try again later.</p>
                     ) : (
                         <Timeline data={projectsArray}></Timeline>
                     )}
+                </section>
+
+                <section className="sm:mt-20 h-screen flex flex-col justify-center items-center text-center px-6 sm:px-32">
+                    <motion.h3
+                        className="text-white mb-20 text-4xl font-bold"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        About Me
+                    </motion.h3>
+
+                    <motion.p
+                        className="text-white text-lg font-fira max-w-3xl p-5"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                    >
+                        I enjoy creating projects that combine <span className="text-gray-400">solid backend functionality</span> with a <span className="text-gray-400">polished, user-friendly design</span> — that’s why full stack development suits me. My background in <span className="text-gray-400">video editing</span> fuels my passion for <span className="text-gray-400">creativity</span>, while coding challenges me to solve problems and build <span className="text-gray-400">efficient systems</span>. I’m driven by making things that <span className="text-gray-400">look good</span> and <span className="text-gray-400">work well</span>.
+                    </motion.p>
                 </section>
 
             </div>
