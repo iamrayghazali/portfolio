@@ -13,13 +13,13 @@ export const projectsMeta = {
             "Log in securely.\n" +
             "Add/edit/remove menu items.\n" +
             "View and manage orders.",
-        technologies: ["React", "Express", "MySQL", "Firebase Auth"],
+        technologies: ["React", "Express", "MySQL", "Node", "NodeMailer", "Vite"],
     },
     "VibeAtlas2": {
         description: "Traveling? Looking for something fun to do?\n" +
             "Get AI-powered personalised suggestions for places to visit: from buzzing city nights to hidden paradise escapes, VibeAtlas serves up instant recommendations that match your energy.\n" +
             "\n" +
             "It’s free, effortless, and actually understands your style. Whether you’re feeling city lights, beach waves, or something off the grid, we’ve got you.",
-        technologies: ["React", "MUI", "Gemini API", "Ticketmaster API"],
+        technologies: ["React", "MUI", "Express", "Google Gemini AI API", "Ticketmaster API", "MySQL" ],
     },
 };
