@@ -1,39 +1,70 @@
 // src/context/GitHubContext.tsx
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import {projectsMeta} from "@/data/projectsMetaData";
+import { AxiosError } from "axios";
 
 const GitHubContext = createContext(null);
 
+type Screenshot = {
+    sha: string;
+    download_url: string;
+};
+
 type Repo = {
     name: string;
-    [key: string]: any;
-}
+    description: string | null;
+    html_url: string;
+    url: string;
+    img?: Screenshot[];
+};
 
 export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios
-            .get("https://api.github.com/users/iamrayghazali/repos")
+        const cachedData = localStorage.getItem("reposCache");
+        const cachedTime = localStorage.getItem("reposCacheTime");
+
+        const oneDayInMilliseconds = 86400000;
+
+        if (cachedData && cachedTime && Date.now() - Number(cachedTime) < oneDayInMilliseconds) {
+
+            setRepos(JSON.parse(cachedData));
+            setLoading(false);
+            return; // use cache, skip API
+        }
+
+        axios.get("https://api.github.com/users/iamrayghazali/repos")
             .then(async (res) => {
                 const filtered = filterRepos(res.data);
-                const reposWithScreenshots = await Promise.all(
-                    filtered.map(async (repo) => {
-                        const screenshots = await fetchScreenshots(repo.name);
-                        return { ...repo, screenshots };
-                    })
-                );
-
-                await cacheScreenshots(reposWithScreenshots);
-                setRepos(reposWithScreenshots);
+                const structured = await createStructure(filtered);
+                setRepos(structured);
+                localStorage.setItem("reposCache", JSON.stringify(structured));
+                localStorage.setItem("reposCacheTime", Date.now().toString());
             })
-            .catch((err) => console.error(err))
+            .catch(handleRateLimitOrError)
             .finally(() => setLoading(false));
     }, []);
 
     const filterRepos = (data: Repo[]) :Repo[] => {
         return data.filter(repo => repo.name !== "iamrayghazali" && repo.name !== "portfolio");
+    }
+
+    const createStructure = async (data: Repo[]) :Promise<Repo[]> => {
+        const arr = [];
+        for (const repo of data) {
+            const imageArray = await fetchScreenshots(repo.name);
+            const obj = {
+                name: repo.name,
+                img: imageArray,
+                description: repo.description,
+                url: repo.url,
+            };
+            arr.push(obj);
+        }
+        return arr;
     }
 
     const fetchScreenshots = async (repoName: string) => {
@@ -48,18 +79,21 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         }
     };
 
-    const cacheScreenshots = async (reposWithScreenshots) => {
-        reposWithScreenshots.forEach(repo => {
-            repo.screenshots.forEach(img => {
-                const link = document.createElement("link");
-                link.rel = "preload";
-                link.as = "image";
-                link.href = img.download_url;
-                document.head.appendChild(link);
-            });
-        });
-    }
-
+    const handleRateLimitOrError = (err: unknown) => {
+        if (err instanceof AxiosError && err.response?.status === 403) {
+            console.warn("GitHub API rate limit hit. Loading metadata only.");
+            const metaRepos = Object.keys(projectsMeta).map(name => ({
+                name,
+                img: [],
+                description: projectsMeta[name].description ?? null,
+                html_url: "#",
+                url: "#"
+            }));
+            setRepos(metaRepos);
+        } else {
+            console.error(err);
+        }
+    };
 
     return (
         <GitHubContext.Provider value={{ repos, loading }}>
