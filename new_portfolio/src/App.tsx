@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import './App.css'
 import {TracingBeam} from "./components/ui/tracing-beam";
 import {useGitHub} from "./context/GithubContext";
@@ -19,7 +19,7 @@ import reactIMG from "/src/assets/icons/tech/react.svg"
 import laravelIMG from "/src/assets/icons/tech/laravel.svg"
 import nodejsIMG from "/src/assets/icons/tech/nodejs.svg"
 import {Timeline} from "@/components/ui/timeline";
-import { projectsMeta } from "./data/projectsMetaData";
+import {projectsMeta} from "./data/projectsMetaData";
 
 
 function App() {
@@ -36,11 +36,21 @@ function App() {
             title: repo.name,
             content: (
                 <div className="font-fira">
-                    <h2  className="">{repo.name}</h2>
 
-                    <p className="text-white font-fira mb-4 text-sm font-normal md:text-base ">
-                        {repo.description}
-                    </p>
+                    <div className="w-full flex  gap-2 mb-2 ml-0">
+                        <a
+                            className="hover:pointer text-sm px-5 py-2.5 text-white text-center inline-flex items-center border-2 border-cyan-900 rounded-lg"
+                            href={repo.html_url}>
+                            <img
+                                src={gitHubLogo}
+                                alt="GitHub Logo"
+                                width="20"
+                                height="20"
+                                className="mr-3"
+                            />
+                            Go to GitHub repository
+                        </a>
+                    </div>
 
                     {meta?.technologies && (
                         <ul className="flex flex-wrap gap-2 text-xs font-medium text-cyan-400">
@@ -51,7 +61,12 @@ function App() {
                             ))}
                         </ul>
                     )}
-                    <p className="mt-6 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+
+                    <p className="text-white font-fira mt-5 mb-4 text-sm font-bold md:text-lg ">
+                        {repo.description}
+                    </p>
+
+                    <p className="mt-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
                         {meta?.description}
                     </p>
                     <div className="mt-5 grid grid-cols-2 gap-4 mt-4">
@@ -65,7 +80,6 @@ function App() {
                         ))}
                     </div>
 
-                    <button>Button</button>
                 </div>
             ),
         };
@@ -91,7 +105,7 @@ function App() {
                                     <p className="font-thin">home</p>
                                 </a>
                                 <a className="transition-colors duration-300 hover:text-cyan-500" href="">
-                                    <p className="font-thin">about</p>
+                                    <p className="font-thin">tech</p>
                                 </a>
                                 <a className="transition-colors duration-300 hover:text-cyan-500" href="">
                                     <p className="font-thin">projects</p>
@@ -108,7 +122,8 @@ function App() {
                         <LampDemo text={"Hi, I'm Ray"}></LampDemo>
                     </section>
 
-                    <section className={"sm:h-dvh h-full bg-gradient-to-b from-[rgb(4,4,12)] to-black border-b-2 border-white "}>
+                    <section
+                        className={"sm:h-dvh h-full bg-gradient-to-b from-[rgb(4,4,12)] to-black border-b-2 border-white "}>
                         <div className="absolute inset-0 rounded-lg z-0">
                             <Particles className="w-full h-full"/>
                         </div>
@@ -159,10 +174,13 @@ function App() {
                     </section>
 
                 </TracingBeam>
-                <section className={"h-screen bg-gradient-to-b from-[rgb(4,4,12)] to-black"}>
+                <section className={`${!repos.length ?  ("h-[20vh]") : ("h-screen")} bg-gradient-to-b from-[rgb(4,4,12)] to-black`}>
                     <Particles className="absolute w-full h-full"/>
-
-                    <Timeline data={projectsArray}></Timeline>
+                    { !repos.length ? (
+                        <p className="text-center text-gray-400 m-20">Projects unavailable right now. Please try again later.</p>
+                    ) : (
+                        <Timeline data={projectsArray}></Timeline>
+                    )}
                 </section>
 
             </div>
