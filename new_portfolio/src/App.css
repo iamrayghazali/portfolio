@@ -1,5 +1,10 @@
-h1 {
+
+html, body, #root {
     font-family: 'Fira Sans';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
 }
 
 @layer utilities {
