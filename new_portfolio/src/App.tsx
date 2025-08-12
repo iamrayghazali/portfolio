@@ -10,6 +10,8 @@ import {motion} from "framer-motion";
 import {Particles} from "@/components/magicui/particles";
 
 // TECH SVGS
+import expressIMG from "/src/assets/icons/tech/express.svg"
+import jestIMG from "/src/assets/icons/tech/jest.svg"
 import jsIMG from "/src/assets/icons/tech/javascript.svg"
 import javaIMG from "/src/assets/icons/tech/java.svg"
 import phpIMG from "/src/assets/icons/tech/php.svg"
@@ -38,8 +40,8 @@ function App() {
                 <div className="font-fira">
 
                     <div className="w-full flex  gap-2 mb-2 ml-0">
-                        <a
-                            className="hover:pointer text-sm px-5 py-2.5 text-white text-center inline-flex items-center border-2 border-cyan-900 rounded-lg"
+                        <a target="_blank"
+                            className="hover:cursor-pointer text-sm px-5 py-2.5 text-white text-center inline-flex items-center border-2 border-cyan-900 rounded-lg"
                             href={repo.html_url}>
                             <img
                                 src={gitHubLogo}
@@ -92,7 +94,7 @@ function App() {
                 <TracingBeam>
                     <Particles className="absolute w-full h-full"/>
 
-                    <section className="relative border-b-2 border-white">
+                    <section id="hero" className="relative border-b-2 border-white">
                         <div className="absolute left-1/2 -translate-x-1/2 w-1/4 z-20 flex flex-col items-center p-5">
                             <motion.div
                                 initial={{y: -100, opacity: 0}}
@@ -101,16 +103,16 @@ function App() {
                                 className="pt-5 sticky flex items-center justify-between whitespace-nowrap text-white gap-4"
                             >
                                 <a className=" transition-all duration-300 hover:text-cyan-500 active:scale-95 "
-                                   href="">
+                                   href="#hero">
                                     <p className="font-thin">home</p>
                                 </a>
-                                <a className="transition-colors duration-300 hover:text-cyan-500" href="">
+                                <a className="transition-colors duration-300 hover:text-cyan-500" href="#tech">
                                     <p className="font-thin">tech</p>
                                 </a>
-                                <a className="transition-colors duration-300 hover:text-cyan-500" href="">
+                                <a className="transition-colors duration-300 hover:text-cyan-500" href="#projects">
                                     <p className="font-thin">projects</p>
                                 </a>
-                                <a className="">
+                                <a className="" href="#contact">
                                     <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]
                                      bg-[linear-gradient(115deg,_rgba(255,255,255,0.05)_30%,_white_50%,_rgba(255,255,255,0.05)_70%)]
                                       bg-[length:300%_100%] bg-[position:200%_0] animate-[shine_5s_linear_infinite]">
@@ -122,18 +124,26 @@ function App() {
                         <LampDemo text={"Hi, I'm Ray"}></LampDemo>
                     </section>
 
-                    <section
-                        className={"sm:h-dvh h-full bg-gradient-to-b from-[rgb(4,4,12)] to-black border-b-2 border-white "}>
+                    <section id="tech" className={"sm:h-dvh h-full bg-black border-b-2 border-white "}>
                         <div className="absolute inset-0 rounded-lg z-0">
                             <Particles className="w-full h-full"/>
                         </div>
                         <div className="m-10 mt-0 grid grid-cols-1 sm:grid-cols-2 gap-20">
                             <div
-                                className="sm:translate-y-25 flex flex-col text-center sm:text-start sm:justify-self-end gap-6 min-w-1/2">
-                                <h1 className="sm:text-3xl text-slate-200 text-lg font-bold font-fira">
+                                className="mt-8 sm:translate-y-25 flex flex-col text-center sm:text-start sm:justify-self-end gap-6 min-w-1/2">
+                                <motion.h1
+                                    initial={{ opacity: 0, y: -50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    viewport={{ once: false, amount: 0.2 }}
+                                    className="sm:text-3xl text-slate-200 text-lg font-bold font-fira">
                                     Programming Languages
-                                </h1>
-                                <div
+                                </motion.h1>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1.2, ease: "easeOut" }}
+                                    viewport={{ once: false, amount: 0.2 }}
                                     className="relative w-full max-w-[370px] aspect-[16/9] bg-black grid grid-cols-2 grid-rows-2 gap-8 place-items-center p-6">
                                     <div className="absolute inset-0 rounded-lg z-0">
                                         <Particles className="w-full h-full"/>
@@ -143,16 +153,26 @@ function App() {
                                     <img src={javaIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Java"/>
                                     <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="Python"/>
                                     <img src={phpIMG} className="h-10 w-10 sm:h-15 sm:w-15 z-10" alt="PHP"/>
-                                </div>
+                                </motion.div>
                             </div>
 
                             <div
                                 className="sm:-translate-y-25 sm:row-start-2 text-center sm:text-start sm:col-start-2 flex justify-center flex-col">
-                                <h1 className="sm:text-3xl sm:ml-20 text-slate-200 text-lg font-bold font-fira">
+                                <motion.h1
+                                    initial={{ opacity: 0, y: -50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    viewport={{ once: false, amount: 0.2 }}
+                                    className="sm:text-3xl sm:ml-20 text-slate-200 text-lg font-bold font-fira">
                                     Frameworks
-                                </h1>
+                                </motion.h1>
 
-                                <div className="
+                                <motion.div
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1.2, ease: "easeOut" }}
+                                    viewport={{ once: false, amount: 0.2 }}
+                                    className="
                                         relative
                                         w-full max-w-[400px]
                                         aspect-auto
@@ -163,46 +183,108 @@ function App() {
                                     </div>
 
                                     <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="JavaScript"/>
-                                    <img src={pythonIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Java"/>
+                                    <img src={jestIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Java"/>
                                     <img src={reactIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
                                     <img src={laravelIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
                                     <img src={nodejsIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="Python"/>
-                                    <img src={djangoIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
-                                </div>
+                                    <img src={expressIMG} className="h-10 w-10 sm:h-15 sm:w-15  z-10" alt="PHP"/>
+                                </motion.div>
                             </div>
                         </div>
                     </section>
 
                 </TracingBeam>
-                <section className={`${!repos.length ?  ("h-[20vh]") : ("h-full")} bg-gradient-to-b from-[rgb(4,4,12)] to-black`}>
-                    <Particles className="absolute w-full h-full"/>
-                    { !repos.length ? (
-                        <p className="text-center text-gray-400 m-20">Projects unavailable right now. Please try again later.</p>
-                    ) : (
-                        <Timeline data={projectsArray}></Timeline>
-                    )}
-                </section>
-
-                <section className="sm:mt-20 h-screen flex flex-col justify-center items-center text-center px-6 sm:px-32">
+                    <section id="projects" className={`${!repos.length ?  ("h-[20vh]") : ("min-h-[80vh]")} bg-black relative`}>
+                        <Particles className="absolute w-full h-full"/>
+                        { !repos.length ? (
+                            <p className="text-center text-gray-400 m-20">Projects unavailable right now. Please try again later.</p>
+                        ) : (
+                            <Timeline data={projectsArray}></Timeline>
+                        )}
+                    </section>
+                <section id="about-me" className="bg-black sm:mt-20 h-dvh flex flex-col justify-center items-center text-center px-6 sm:px-32">
                     <motion.h3
                         className="text-white mb-20 text-4xl font-bold"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >
                         About Me
                     </motion.h3>
 
                     <motion.p
                         className="text-white text-lg font-fira max-w-3xl p-5"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >
                         I enjoy creating projects that combine <span className="text-gray-400">solid backend functionality</span> with a <span className="text-gray-400">polished, user-friendly design</span> — that’s why full stack development suits me. My background in <span className="text-gray-400">video editing</span> fuels my passion for <span className="text-gray-400">creativity</span>, while coding challenges me to solve problems and build <span className="text-gray-400">efficient systems</span>. I’m driven by making things that <span className="text-gray-400">look good</span> and <span className="text-gray-400">work well</span>.
                     </motion.p>
                 </section>
+                <section id="contact" className="h-fit mb-20 md:mb-30">
+                            <p className="mb-15 md:mb-30 text-3xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+                                Get in touch
+                            </p>
+                        <div className="flex justify-center items-center gap-5 flex-col md:mt-30 md:mb-5 ">
+                            <div className="flex gap-2 mb-2">
+                                <a target="_blank" className="hover:pointer text-lg px-5 py-2.5 text-white text-center inline-flex items-center border-2 border-cyan-900 rounded-lg"
+                                   href={"mailto:ghazali.raydan@gmail.com"}>
+                                    <img
+                                        src={emailLogo}
+                                        alt="Email Logo"
+                                        width="30"
+                                        height="30"
+                                        className="mr-3"
+                                    />
+                                    Send an Email
+                                </a>
+                            </div>
+                            <div className="flex gap-2 mb-2">
+                                <a target="_blank" className="hover:pointer text-lg px-5 py-2.5 text-white text-center inline-flex items-center border-2 border-cyan-900 rounded-lg"
+                                   href={"https://www.linkedin.com/in/raydan-ghazali/"}>
+                                    <img
+                                        src={linkedInLogo}
+                                        alt="LinkedIn Logo"
+                                        width="30"
+                                        height="30"
+                                        className="mr-3"
+                                    />
+                                    Write on LinkedIn
+                                </a>
+                            </div>
+                        </div>
 
+                </section>
+                <section id="footer" className=" bg-cyan-900 flex flex-col p-10 mt-10 mb-10 md:p-0 md:flex-row md:items-center md:justify-evenly gap-5 ">
+
+                        <p className="flex md:justify-start justify-center items-center text-white">
+                            raydandev.com
+                        </p>
+
+                        <div className="mx-auto md:mx-0 flex justify-center items-center text-white ">
+                            <p>Made by | <a className="font-bold italic hover:pointer" href={"https://github.com/iamrayghazali"}>This guy</a></p>
+                        </div>
+
+                        <div className="flex justify-center items-center gap-3 md:justify-around md:mt-0 md:gap-8 md:mt-5 ">
+
+                            <a href="https://github.com/iamrayghazali" target="_blank" className="flex justify-center items-center flex-col p-2">
+                                <img height="30" width="30" src={gitHubLogo} alt="GitHub Logo"></img>
+                                <p className="hidden sm:block text-white text-xs p-2">GitHub</p>
+                            </a>
+                            <a href="https://www.linkedin.com/in/raydan-ghazali/" target="_blank" className="flex justify-center items-center flex-col">
+                                <img height="30" width="30" src={linkedInLogo} alt="LinkedIn Logo"></img>
+                                <p className="hidden sm:block text-white text-xs  p-2">LinkedIn</p>
+                            </a>
+                            <a href="mailto:ghazali.raydan@gmail.com" target="_blank" className="flex justify-center items-center flex-col">
+                                <img height="30" width="30" src={emailLogo} alt="Email Logo"></img>
+                                <p className="hidden sm:block text-white text-xs p-2">Email</p>
+                            </a>
+
+                        </div>
+
+                </section>
             </div>
         </>
     )
