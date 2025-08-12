@@ -30,7 +30,6 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         const oneDayInMilliseconds = 86400000;
 
         if (cachedData && cachedTime && Date.now() - Number(cachedTime) < oneDayInMilliseconds) {
-
             setRepos(JSON.parse(cachedData));
             setLoading(false);
             return; // use cache, skip API
@@ -52,20 +51,18 @@ export const GitHubProvider = ({ children }: { children: React.ReactNode }) => {
         return data.filter(repo => repo.name !== "iamrayghazali" && repo.name !== "portfolio");
     }
 
-    const createStructure = async (data: Repo[]) :Promise<Repo[]> => {
+    const createStructure = async (data: Repo[]): Promise<Repo[]> => {
         const arr = [];
         for (const repo of data) {
             const imageArray = await fetchScreenshots(repo.name);
-            const obj = {
-                name: repo.name,
+            console.log(repo.name, repo.html_url);
+            arr.push({
+                ...repo,
                 img: imageArray,
-                description: repo.description,
-                url: repo.url,
-            };
-            arr.push(obj);
+            });
         }
         return arr;
-    }
+    };
 
     const fetchScreenshots = async (repoName: string) => {
         try {
