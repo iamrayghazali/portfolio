@@ -9,7 +9,6 @@ import {LampDemo} from "@/components/ui/lamp";
 import {motion} from "framer-motion";
 import {Particles} from "@/components/magicui/particles";
 import {Timeline} from "@/components/ui/timeline";
-import {LoaderOne} from "@/components/ui/loader";
 
 // TECH SVGS
 import expressIMG from "/src/assets/icons/tech/express.svg"
@@ -30,7 +29,7 @@ function App() {
 
     if (loading) {
         return (<div className="flex justify-center items-center h-screen">
-                <LoaderOne />
+               <h3 className="text-white">Loading...</h3>
             </div>)
     }
 
