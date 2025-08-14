@@ -6,7 +6,7 @@ import {
     useScroll,
     useSpring,
 } from "motion/react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils.ts";
 
 export const TracingBeam = ({
                                 children,
