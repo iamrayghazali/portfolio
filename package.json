@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-    "homepage": "https://iamrayghazali.github.io/portfolio/",
+    "homepage": "https://raydandev.com/",
   "scripts": {
     "predeploy": "npm run build",
-    "dev": "new_portfolio/node_modules/.bin/vite",
-    "build": "new_portfolio/node_modules/.bin/tsc -b && vite build",
-    "deploy": "new_portfolio/node_modules/.bin/gh-pages -d dist",
-    "lint": "new_portfolio/node_modules/.bin/eslint .",
-    "preview": "new_portfolio/node_modules/.bin/vite preview"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
