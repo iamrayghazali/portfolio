@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import {projectsMeta} from "@/data/projectsMetaData";
+import {projectsMeta} from "@/data/projectsMetaData.tsx";
 import { AxiosError } from "axios";
 
 const GitHubContext = createContext(null);

@@ -1,14 +1,14 @@
 import React from "react";
 import './App.css'
-import {TracingBeam} from "./components/ui/tracing-beam";
-import {useGitHub} from "./context/GithubContext";
+import {TracingBeam} from "./components/ui/tracing-beam.tsx";
+import {useGitHub} from "./context/GithubContext.tsx";
 import linkedInLogo from "@/assets/icons/linkedin.svg"
 import gitHubLogo from "@/assets/icons/github.svg"
 import emailLogo from "@/assets/icons/email.svg"
-import {LampDemo} from "@/components/ui/lamp";
+import {LampDemo} from "@/components/ui/lamp.tsx";
 import {motion} from "framer-motion";
-import {Particles} from "@/components/magicui/particles";
-import {Timeline} from "@/components/ui/timeline";
+import {Particles} from "@/components/magicui/particles.tsx";
+import {Timeline} from "@/components/ui/timeline.tsx";
 
 // TECH SVGS
 import expressIMG from "/src/assets/icons/tech/express.svg"
@@ -21,7 +21,7 @@ import djangoIMG from "/src/assets/icons/tech/django.svg"
 import reactIMG from "/src/assets/icons/tech/react.svg"
 import laravelIMG from "/src/assets/icons/tech/laravel.svg"
 import nodejsIMG from "/src/assets/icons/tech/nodejs.svg"
-import {projectsMeta} from "./data/projectsMetaData";
+import {projectsMeta} from "./data/projectsMetaData.tsx";
 
 
 function App() {
