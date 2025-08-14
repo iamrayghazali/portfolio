@@ -8,6 +8,8 @@ import emailLogo from "@/assets/icons/email.svg"
 import {LampDemo} from "@/components/ui/lamp";
 import {motion} from "framer-motion";
 import {Particles} from "@/components/magicui/particles";
+import {Timeline} from "@/components/ui/timeline";
+import {LoaderOne} from "@/components/ui/loader";
 
 // TECH SVGS
 import expressIMG from "/src/assets/icons/tech/express.svg"
@@ -20,7 +22,6 @@ import djangoIMG from "/src/assets/icons/tech/django.svg"
 import reactIMG from "/src/assets/icons/tech/react.svg"
 import laravelIMG from "/src/assets/icons/tech/laravel.svg"
 import nodejsIMG from "/src/assets/icons/tech/nodejs.svg"
-import {Timeline} from "@/components/ui/timeline";
 import {projectsMeta} from "./data/projectsMetaData";
 
 
@@ -28,7 +29,9 @@ function App() {
     const {repos, loading} = useGitHub();
 
     if (loading) {
-        return <h1>loading...</h1>
+        return (<div className="flex justify-center items-center h-screen">
+                <LoaderOne />
+            </div>)
     }
 
     const projectsArray = repos.map(repo => {
