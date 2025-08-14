@@ -1,19 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-// @ts-ignore
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-// @ts-ignore
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import path from "path"; // normal Node path
 
 export default defineConfig({
     plugins: [react()],
-    base: '/',
+    base: "/",
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "src"),
+            "@": path.resolve(__dirname, "src"), // __dirname works in TS with Node
         },
     },
 });

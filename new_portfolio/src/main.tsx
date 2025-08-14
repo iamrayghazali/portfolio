@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
 import React from 'react'
-import {GitHubProvider} from "@/context/GithubContext";
+import {GitHubProvider} from "@/context/GithubContext.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <GitHubProvider>
