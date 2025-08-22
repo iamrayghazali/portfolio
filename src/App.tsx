@@ -70,7 +70,7 @@ function App() {
                         {repo.description}
                     </p>
 
-                    <p className="mt-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
+                    <p className="mt-6 text-sm font-normal md:text-base text-neutral-400">
                         {meta?.description}
                     </p>
                     <div className="mt-5 grid grid-cols-2 gap-4 mt-4">
@@ -83,7 +83,6 @@ function App() {
                             />
                         ))}
                     </div>
-
                 </div>
             ),
         };
@@ -104,15 +103,15 @@ function App() {
                                 transition={{duration: 1.2, ease: "easeOut"}}
                                 className="pt-5 sticky flex items-center justify-between whitespace-nowrap text-white gap-4"
                             >
-                                <a className=" transition-all duration-300 hover:text-cyan-500 active:scale-95 "
+                                <a className=" font-normal transition-all duration-300 hover:text-cyan-500 active:scale-95"
                                    href="#hero">
-                                    <p className="font-thin">home</p>
+                                    home
                                 </a>
-                                <a className="transition-colors duration-300 hover:text-cyan-500" href="#tech">
-                                    <p className="font-thin">tech</p>
+                                <a className=" font-normal transition-colors duration-300 hover:text-cyan-500" href="#tech">
+                                    tech
                                 </a>
-                                <a className="transition-colors duration-300 hover:text-cyan-500" href="#projects">
-                                    <p className="font-thin">projects</p>
+                                <a className=" font-normaltransition-colors duration-300 hover:text-cyan-500" href="#projects">
+                                    projects
                                 </a>
                                 <a className="" href="#contact">
                                     <p className="font-bold text-transparent bg-clip-text drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]
