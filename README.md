@@ -1,8 +1,7 @@
 # Ray's Portfolio
 
-[![Home Page](screenshots/main.png)](screenshots/main.png)
+[![Home Page](screenshots/home.png)](screenshots/home.png)
 [![Projects Page](screenshots/projects.png)](screenshots/projects.png)
-[![Tech Section](screenshots/tech.png)](screenshots/tech.png)
 
 ---
 
